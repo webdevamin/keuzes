@@ -2,7 +2,7 @@ import Head from "next/head";
 import { APP_TITLE, APP_DESCRIPTION, APP_URL } from "../config/app";
 
 const Seo = ({ title, description, noIndex }) => {
-    const realTitle = title ? `${title} | Keuzes` : APP_TITLE;
+    const realTitle = title ? `${title} | Keuzes.be` : APP_TITLE;
     const realDescription = description ?? APP_DESCRIPTION;
 
     return (
