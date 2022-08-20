@@ -1,0 +1,68 @@
+.header {
+  @apply mb-8;
+
+  .nav {
+    .menu_btn {
+      @apply hidden;
+
+      &:checked ~ .menu_icon .navicon {
+        @apply bg-transparent;
+      }
+
+      &:checked ~ .menu_icon .navicon:before {
+        transform: rotate(-45deg);
+      }
+
+      &:checked ~ .menu_icon .navicon:after {
+        transform: rotate(45deg);
+      }
+
+      &:checked ~ .menu_icon:not(.steps) .navicon:before,
+      &:checked ~ .menu_icon:not(.steps) .navicon:after {
+        top: 0;
+      }
+    }
+
+    .menu_icon {
+      position: relative;
+      user-select: none;
+
+      @apply block lg:hidden;
+
+      .navicon {
+        @apply bg-dark block relative;
+
+        height: 2px;
+        transition: background 0.2s ease-out;
+        width: 18px;
+
+        &::before,
+        &::after {
+          @apply bg-dark content-[''] block h-full 
+          absolute w-full lg:hidden;
+
+          transition: all 0.2s ease-out;
+        }
+
+        &::before {
+          top: 5px;
+        }
+
+        &::after {
+          top: -5px;
+        }
+      }
+    }
+  }
+
+  .h_button {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 42px;
+    height: 42px;
+
+    padding: 0.4rem;
+  }
+}

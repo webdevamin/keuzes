@@ -1,5 +1,5 @@
 .aside {
-  @apply border-gray-100 border-2 flex-1 h-fit;
+  @apply border-gray-100 border-2 flex-1 h-fit hidden lg:block;
 
   h2,
   label {
