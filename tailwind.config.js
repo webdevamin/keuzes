@@ -8,7 +8,7 @@ module.exports = {
     extend: {
       colors: {
         dark: "#000000",
-        theme: "#FFDE59",
+        theme: "#FFD31F",
       },
       spacing: {
         "1px": "1px",

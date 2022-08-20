@@ -8,7 +8,7 @@ const Item = ({ item }) => {
         price, rating, title } = item;
 
     const { rate, count } = rating;
-    
+
     return (
         <>
             <Seo title={title} description={description} />

@@ -1,0 +1,30 @@
+.aside {
+  @apply border-gray-100 border-2 flex-1 h-fit;
+
+  h2,
+  label {
+    @apply after:content-[''] after:block after:h-2px
+    after:bg-theme after:mt-2 after:w-12;
+  }
+
+  .menu {
+    @apply py-12 pl-12 pr-28;
+  }
+
+  .menu_odd {
+    @apply py-12 pl-12 pr-28 bg-gray-50;
+  }
+
+  select {
+    @apply text-gray-500 p-3 mt-2;
+  }
+
+  .list {
+    @apply flex flex-col gap-1 pl-2;
+
+    div {
+      @apply cursor-pointer transition-all
+      duration-150 ease-linear hover:text-theme;
+    }
+  }
+}

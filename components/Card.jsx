@@ -7,7 +7,7 @@ const Card = ({ item }) => {
 
     return (
         <Link href={`items/${id}`}>
-            <a className={`border-b-2 border-r-2 border-opacity-5`}>
+            <a className={`border-b-2 border-r-2 border-gray-100`}>
                 <article className={`flex items-center 
                 justify-center flex-col gap-8 p-8 h-full`}>
                     <h2 className={`font-bold`}>{title}</h2>
@@ -23,7 +23,7 @@ const Card = ({ item }) => {
                         </div>
                         <div>
                             <h3 className={`text-gray-500 uppercase mb-1`}>
-                                Laagste prijs
+                                Prijs
                             </h3>
                             <span className="font-bold">€ {price}</span>
                         </div>

@@ -9,11 +9,11 @@ const Hero = () => {
             <div className={`absolute text-white uppercase 
             flex flex-col justify-center h-full`}>
                 <article className={`pl-16 pr-12 py-10 bg-dark`}>
-                    <h1 className={`text-white text-4xl font-bold mb-3 after:content-none`}>
-                        Unleash gaming aura
+                    <h1 className={`text-white text-5xl font-bold mb-5 after:content-none`}>
+                        Keuzes.be
                     </h1>
-                    <p className="text-lg">
-                        Gekke acties voor gaming producten
+                    <p className="text-xl">
+                        Top 100 van het jaar elektronica: smartphones, laptops en meer
                     </p>
                 </article>
             </div>
