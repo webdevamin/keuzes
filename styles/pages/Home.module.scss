@@ -1,5 +1,6 @@
 .aside {
-  @apply border-gray-100 border-2 flex-1 h-fit hidden lg:block;
+  @apply border-gray-100 border flex-1 h-fit 
+  hidden lg:block shadow-lg;
 
   h2,
   label {
@@ -16,7 +17,8 @@
   }
 
   select {
-    @apply text-gray-500 p-3 mt-2;
+    @apply text-gray-500 p-3 mt-2 border-2 border-gray-100 
+    rounded-lg;
   }
 
   .list {

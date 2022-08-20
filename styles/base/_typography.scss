@@ -1,8 +1,9 @@
 h1,
 .h1 {
-  @apply text-2xl font-bold mb-5 sm:mb-7 md:mb-10 lg:mb-14
+  @apply text-xl lg:text-2xl font-bold mb-8 md:mb-10 lg:mb-14
   after:content-[''] after:block after:h-4px
-  after:bg-theme after:mt-5 after:w-20;
+  after:bg-theme after:mt-3 lg:after:mt-5 
+  after:w-16 lg:after:w-20;
 }
 
 h2,

@@ -13,7 +13,7 @@ const Item = ({ item }) => {
         <>
             <Seo title={title} description={description} />
             <Header />
-            <main className='pt-16'>
+            <main className='pt-16 lg:pt-20'>
                 <article className='flex items-center gap-28 justify-center'>
                     <div>
                         <Image src={image} alt={title}
@@ -42,7 +42,7 @@ const Item = ({ item }) => {
                             <Link href={`/`}>
                                 <a className={`bg-theme p-5 uppercase 
                                 font-bold transition-all ease-in-out duration-500
-                                hover:bg-dark hover:text-white`}>
+                                hover:bg-dark hover:text-white shadow-xl`}>
                                     Naar homepagina
                                 </a>
                             </Link>

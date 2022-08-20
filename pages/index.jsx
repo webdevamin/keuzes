@@ -10,7 +10,7 @@ import styles from "../styles/pages/Home.module.scss";
 const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
 const Home = () => {
-  const { data, error } = useSWR('https://fakestoreapi.com/products/category/electronics', fetcher);
+  const { data, error } = useSWR('https://fakestoreapi.com/products/category/electronics?limit=12', fetcher);
 
   const Items = () => {
     if (error) {
@@ -36,11 +36,27 @@ const Home = () => {
       <Seo />
       <Header />
       <Hero />
-      <main className='pt-16'>
+      <main className='pt-16 lg:pt-20'>
         <section>
-          <h1>Top producten</h1>
-          <div className={`flex gap-8`}>
+          <h1 className={`capitalize`}>
+            Trending producten
+          </h1>
+          <div className={`flex gap-10`}>
             <aside className={styles.aside}>
+              <div className={styles.menu_odd}>
+                <label htmlFor="sort"
+                  className={`block h2`}>
+                  Trending
+                </label>
+                <select id="sort">
+                  <option value="price_desc">
+                    Prijs (dalend)
+                  </option>
+                  <option value="price_asc">
+                    Prijs (stijgend)
+                  </option>
+                </select>
+              </div>
               <div className={styles.menu}>
                 <label htmlFor="sort"
                   className={`block h2`}>
@@ -145,7 +161,7 @@ const Home = () => {
               </div>
             </aside>
             <div className={`grid grid-cols-1 md:grid-cols-2 border-gray-100
-          lg:grid-cols-2 xl:grid-cols-3 border-t-2 border-l-2`}>
+          lg:grid-cols-2 xl:grid-cols-3 border-t-2 border-l-2 shadow-lg`}>
               <Items />
               <Items />
             </div>

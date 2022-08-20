@@ -22,7 +22,7 @@ const Seo = ({ title, description, noIndex }) => {
             {
                 noIndex && <meta name="robots" content="noindex" />
             }
-            <link rel="icon" href="/favicon.ico" />
+            <link rel="icon" href="/favicon.png" />
         </Head>
     );
 };
