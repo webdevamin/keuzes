@@ -39,7 +39,7 @@ const Home = () => {
       <main className='pt-16 lg:pt-20'>
         <section>
           <h1 className={`capitalize`}>
-            Trending producten
+            Trending elektronica
           </h1>
           <div className={`flex gap-10`}>
             <aside className={styles.aside}>
@@ -160,8 +160,9 @@ const Home = () => {
                 </select>
               </div>
             </aside>
-            <div className={`grid grid-cols-1 md:grid-cols-2 border-gray-100
-          lg:grid-cols-2 xl:grid-cols-3 border-t-2 border-l-2 shadow-lg`}>
+            <div className={`grid grid-cols-1 sm:grid-cols-2 border-gray-100
+          lg:grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3
+          border-t-2 border-l-2 shadow-lg`}>
               <Items />
               <Items />
             </div>

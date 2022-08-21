@@ -4,7 +4,7 @@ import Header from '../../components/Header';
 import Seo from '../../components/Seo'
 
 const Item = ({ item }) => {
-    const { category, description, id, image,
+    const { category, description, image,
         price, rating, title } = item;
 
     const { rate, count } = rating;
@@ -13,13 +13,13 @@ const Item = ({ item }) => {
         <>
             <Seo title={title} description={description} />
             <Header />
-            <main className='pt-16 lg:pt-20'>
-                <article className='flex items-center gap-28 justify-center'>
+            <main className={`pt-16 lg:pt-20 border-t-2 border-gray-100`}>
+                <article className={`flex items-center gap-28 justify-center`}>
                     <div>
                         <Image src={image} alt={title}
                             width={300} height={350} objectFit={"contain"} />
                     </div>
-                    <div className='w-3xl'>
+                    <div className={`w-3xl`}>
                         <div>
                             <p className={`uppercase text-gray-400`}>
                                 {category}

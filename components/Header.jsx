@@ -16,10 +16,9 @@ const Header = () => {
             <div className={`flex justify-between items-center`}>
                 <div>
                     <Link href={'/'}>
-                        <a>
-                            <Image src={'/logo.png'}
-                                alt={"logo"} objectFit={"contain"}
-                                width={173.428} height={58} />
+                        <a className={`block relative w-32 h-10 lg:w-44 lg:h-14`}>
+                            <Image src={'/logo.png'} objectFit={'contain'}
+                                alt={"logo"} layout={`fill`} />
                         </a>
                     </Link>
                 </div>
