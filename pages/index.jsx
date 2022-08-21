@@ -4,13 +4,26 @@ import Header from '../components/Header';
 import Hero from '../components/Hero';
 import Loader from '../components/Loader';
 import Seo from '../components/Seo'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFilter, faXmark, faPhone } from '@fortawesome/free-solid-svg-icons'
+import { useState } from "react";
 
 import styles from "../styles/pages/Home.module.scss";
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
 const Home = () => {
+  const [showMenu, setShowMenu] = useState(false);
+
   const { data, error } = useSWR('https://fakestoreapi.com/products/category/electronics?limit=12', fetcher);
+
+  const handleFilterClick = () => {
+    setShowMenu(true);
+  }
+
+  const closeMenu = () => {
+    setShowMenu(false);
+  }
 
   const Items = () => {
     if (error) {
@@ -36,11 +49,65 @@ const Home = () => {
       <Seo />
       <Header />
       <Hero />
+      <aside className={styles.aside_sm}>
+        <div className={`bg-black h-screen w-screen fixed transition-all 
+            ease-in-out top-0 right-0 z-10 opacity-30 block
+            ${showMenu ? '' : 'hidden'}`} onClick={closeMenu} />
+        <div className={`top-0 left-0 bg-white py-10 md:py-12 fixed h-full 
+            z-50 block transition-all ease-in-out rounded-r-3xl shadow-2xl 
+            ${showMenu ? 'w-80 md:w-96 px-8 md:px-12' : 'px-0 w-0 md:w-0'}`}>
+          <div className={`${showMenu ? 'block' : 'hidden'}`}>
+            <div className='wrapper'>
+              <div className={styles.accordion}>
+                <div className='item' onClick={() => handleClick(index)}>
+                  <div className={styles.item}>
+                    <span className={styles.icon}>
+                      +
+                      {/* {selected === index && faqs.length >= 1 ? '-' : '+'} */}
+                    </span>
+                    <h4>Item title</h4>
+                  </div>
+                  {/* <div className={selected === index && faqs.length >= 1 ?
+                    'content show' : 'content'}
+                    dangerouslySetInnerHTML={{ __html: answer.html }} /> */}
+                  <div className={styles.content}>
+                    Item detail
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* <div className={`w-4 h-4 bg-theme p-4 shadow rounded-full`}
+              onClick={closeMenu}>
+              <FontAwesomeIcon icon={faXmark}
+                className={`alert_icon text-white-all`} />
+            </div>
+            <ul className={`mt-12`}>
+              <li className={`pb-2.5 mb-2.5`}>
+                <div className={`flex items-center gap-5 transition-all 
+                            ease-in-out`}>
+                  <div className="bg-transparent shadow-lg
+                                text-theme transition-all ease-in-out 
+                                hover:opacity-75 w-10 h-10 flex items-center 
+                                justify-center rounded-xl">
+                  </div>
+                  <span className={`font-semibold opacity-75`}>
+                    Dashboard
+                  </span>
+                </div>
+              </li>
+            </ul> */}
+          </div>
+        </div>
+      </aside>
       <main className='pt-16 lg:pt-20'>
         <section>
-          <h1 className={`capitalize`}>
-            Trending elektronica
-          </h1>
+          <div className={`flex justify-between`}>
+            <h1 className={`capitalize`}>
+              Trending elektronica
+            </h1>
+            <FontAwesomeIcon icon={faFilter} onClick={handleFilterClick}
+              className={`h-10 w-10 p-2.5 mb-1 block lg:hidden`} />
+          </div>
           <div className={`flex gap-10`}>
             <aside className={styles.aside}>
               <div className={styles.menu_odd}>

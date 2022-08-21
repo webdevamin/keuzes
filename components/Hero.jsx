@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Hero = () => {
     return (
-        <section className={`relative h-64 sm:h-96 md:h-2xl shadow-lg`}>
+        <section className={`relative h-64 sm:h-96 md:h-2xl shadow`}>
             <Image src={`/samsung-galaxy.webp`} alt={"Actie"}
                 objectFit={`cover`} layout={`fill`} priority />
             <div className={`flex w-full h-full justify-center items-center`}>
