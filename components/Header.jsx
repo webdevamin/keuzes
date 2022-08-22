@@ -25,7 +25,7 @@ const Header = () => {
                     lg:hidden pt-0 cursor-pointer w-10 h-10 p-1`}
                         htmlFor="menu-btn">
                         <span className={`bg-dark block relative h-0.5 
-                        transition-all w-full before:bg-dark before:content-[''] 
+                        transition-all w-10/12 before:bg-dark before:content-[''] 
                         before:block before:h-full before:absolute 
                         before:w-full before:lg-hidden before:transition-all 
                         after:bg-dark after:content-[''] 

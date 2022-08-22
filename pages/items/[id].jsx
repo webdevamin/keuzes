@@ -13,36 +13,34 @@ const Item = ({ item }) => {
         <>
             <Seo title={title} description={description} />
             <Header />
-            <main className={`pt-16 lg:pt-20 border-t-2 border-gray-100`}>
-                <article className={`flex items-center gap-28 justify-center`}>
+            <main className={`pt-16 px-1 lg:pt-20 border-t-2 border-gray-100`}>
+                <article className={`flex flex-col lg:flex-row 
+                items-center gap-1 lg:gap-28 justify-center`}>
                     <div>
                         <Image src={image} alt={title}
                             width={300} height={350} objectFit={"contain"} />
                     </div>
-                    <div className={`w-3xl`}>
+                    <div className={`lg:w-3xl`}>
                         <div>
                             <p className={`uppercase text-gray-400`}>
                                 {category}
                             </p>
-                            <h1 className={`after:content-none font-normal 
-                        text-4xl mt-3 mb-3`}>
+                            <h1 className={`after:content-none font-semibold
+                            text-2xl lg:text-4xl 
+                            mt-3 mb-6 lg:mb-8`}>
                                 {title}
                             </h1>
-                            <p className='font-bold mb-5'>
-                                {`Rating: ${rate} (${count})`}
-                            </p>
-                            <p className='text-3xl font-bold mb-5'>
-                                € {price}
-                            </p>
                             <p className='text-gray-500'>
                                 {description}
                             </p>
                         </div>
-                        <div className='mt-12'>
+                        <div className='my-12 w-full'>
                             <Link href={`/`}>
-                                <a className={`bg-theme p-5 uppercase 
-                                font-bold transition-all ease-in-out duration-500
-                                hover:bg-dark hover:text-white shadow-xl`}>
+                                <a className={`bg-theme p-4 pl-6
+                                lg:p-5 lg:px-8 uppercase block w-full 
+                                lg:inline-block lg:w-auto font-bold 
+                                transition-all ease-linear duration-300
+                                 hover:bg-dark hover:text-white shadow-xl`}>
                                     Naar homepagina
                                 </a>
                             </Link>

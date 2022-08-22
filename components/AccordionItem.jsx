@@ -24,9 +24,12 @@ const AccordionItem = ({ category, items }) => {
             ${selected === category ? `h-auto max-h-96 transition` : ``}`}>
                 {
                     items.map((item, index) => {
+                        const { slug, name } = item;
+
                         return (
-                            <div key={index} className={`capitalize`}>
-                                {item}
+                            <div key={index} data-slug={slug}
+                                className={`capitalize`}>
+                                {name}
                             </div>
                         )
                     })
