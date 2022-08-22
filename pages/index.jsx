@@ -7,8 +7,7 @@ import Seo from '../components/Seo'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFilter, faXmark, faPhone } from '@fortawesome/free-solid-svg-icons'
 import { useState } from "react";
-
-import styles from "../styles/pages/Home.module.scss";
+import AccordionItem from '../components/AccordionItem';
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
@@ -25,22 +24,28 @@ const Home = () => {
     setShowMenu(false);
   }
 
-  const Items = () => {
-    if (error) {
-      return (
-        <p className='mt-10'>
+  if (error) {
+    return (
+      <>
+        <Seo />
+        <Header />
+        <Hero />
+        <p className={`text-center lg:text-left mt-10`}>
           Er ging iets mis met het ophalen van de producten.
           Probeer het later opnieuw.
         </p>
-      )
-    }
+      </>
+    )
+  }
 
-    if (!data) return <Loader />
-
+  if (!data) {
     return (
-      data.map((item, index) => {
-        return <Card key={index} item={item} />
-      })
+      <>
+        <Seo />
+        <Header />
+        <Hero />
+        <Loader />
+      </>
     )
   }
 
@@ -49,53 +54,60 @@ const Home = () => {
       <Seo />
       <Header />
       <Hero />
-      <aside className={styles.aside_sm}>
+      <aside>
         <div className={`bg-black h-screen w-screen fixed transition-all 
-            ease-in-out top-0 right-0 z-10 opacity-30 block
-            ${showMenu ? '' : 'hidden'}`} onClick={closeMenu} />
-        <div className={`top-0 left-0 bg-white py-10 md:py-12 fixed h-full 
-            z-50 block transition-all ease-in-out rounded-r-3xl shadow-2xl 
-            ${showMenu ? 'w-80 md:w-96 px-8 md:px-12' : 'px-0 w-0 md:w-0'}`}>
+        ease-in-out top-0 right-0 z-10 opacity-30 
+        ${showMenu ? 'block' : 'hidden'}`}
+          onClick={closeMenu} />
+        <div className={`top-0 left-0 bg-white py-10 md:py-12 fixed 
+        h-full z-50 block transition-all ease-in-out rounded-r-3xl shadow-2xl 
+        ${showMenu ? 'w-80 md:w-96 px-8 md:px-12' : 'px-0 w-0 md:w-0'}`}>
           <div className={`${showMenu ? 'block' : 'hidden'}`}>
-            <div className='wrapper'>
-              <div className={styles.accordion}>
-                <div className='item' onClick={() => handleClick(index)}>
-                  <div className={styles.item}>
-                    <span className={styles.icon}>
-                      +
-                      {/* {selected === index && faqs.length >= 1 ? '-' : '+'} */}
-                    </span>
-                    <h4>Item title</h4>
-                  </div>
-                  {/* <div className={selected === index && faqs.length >= 1 ?
-                    'content show' : 'content'}
-                    dangerouslySetInnerHTML={{ __html: answer.html }} /> */}
-                  <div className={styles.content}>
-                    Item detail
-                  </div>
-                </div>
-              </div>
+            <div>
+              <label htmlFor="sort"
+                className={`block h2 capitalize`}>
+                Trending
+              </label>
+              <select id="sort">
+                <option value={`price_desc`}>
+                  Prijs (dalend)
+                </option>
+                <option value={`price_asc`}>
+                  Prijs (stijgend)
+                </option>
+              </select>
             </div>
-            {/* <div className={`w-4 h-4 bg-theme p-4 shadow rounded-full`}
-              onClick={closeMenu}>
-              <FontAwesomeIcon icon={faXmark}
-                className={`alert_icon text-white-all`} />
+            <div>
+              <label htmlFor="sort"
+                className={`block h2 capitalize`}>
+                Sorteren top 100
+              </label>
+              <select id="sort">
+                <option value={`populair_desc`}>
+                  Populairst (dalend)
+                </option>
+                <option value={`populair_asc`}>
+                  Populairst (stijgend)
+                </option>
+                <option value={`price_desc`}>
+                  Prijs (dalend)
+                </option>
+                <option value={`price_desc`}>
+                  Prijs (dalend)
+                </option>
+              </select>
             </div>
-            <ul className={`mt-12`}>
-              <li className={`pb-2.5 mb-2.5`}>
-                <div className={`flex items-center gap-5 transition-all 
-                            ease-in-out`}>
-                  <div className="bg-transparent shadow-lg
-                                text-theme transition-all ease-in-out 
-                                hover:opacity-75 w-10 h-10 flex items-center 
-                                justify-center rounded-xl">
-                  </div>
-                  <span className={`font-semibold opacity-75`}>
-                    Dashboard
-                  </span>
-                </div>
-              </li>
-            </ul> */}
+            <div>
+              <h2 htmlFor="sort" className={`block h2`}>
+                Filteren top 100
+              </h2>
+              <AccordionItem
+                category={'smartphones'}
+                items={['alle', 'android', 'apple iphone']} />
+              <AccordionItem
+                category={'laptops'}
+                items={['alle', 'windows', 'apple macbook']} />
+            </div>
           </div>
         </div>
       </aside>
@@ -109,8 +121,9 @@ const Home = () => {
               className={`h-10 w-10 p-2.5 mb-1 block lg:hidden`} />
           </div>
           <div className={`flex gap-10`}>
-            <aside className={styles.aside}>
-              <div className={styles.menu_odd}>
+            <aside className={`border-gray-100 border flex-1 
+            h-fit hidden lg:block shadow-lg`}>
+              <div className={`py-12 pl-12 pr-28 bg-gray-50`}>
                 <label htmlFor="sort"
                   className={`block h2`}>
                   Trending
@@ -124,7 +137,7 @@ const Home = () => {
                   </option>
                 </select>
               </div>
-              <div className={styles.menu}>
+              <div className={`py-12 pl-12 pr-28`}>
                 <label htmlFor="sort"
                   className={`block h2`}>
                   Sorteren top 100
@@ -144,14 +157,14 @@ const Home = () => {
                   </option>
                 </select>
               </div>
-              <div className={styles.menu_odd}>
+              <div className={`py-12 pl-12 pr-28 bg-gray-50`}>
                 <h2>
                   Filteren top 100
                 </h2>
                 <div className={`p-3 flex flex-col gap-3`}>
                   <div>
                     <h3>Smartphones</h3>
-                    <div className={styles.list}>
+                    <div className={`flex flex-col gap-1 pl-2`}>
                       <div data-id={`phones_all`}>
                         Alle
                       </div>
@@ -165,7 +178,7 @@ const Home = () => {
                   </div>
                   <div>
                     <h3>Laptops</h3>
-                    <div className={styles.list}>
+                    <div className={`flex flex-col gap-1 pl-2`}>
                       <div data-id={`laptops_all`}>
                         Alle
                       </div>
@@ -179,7 +192,7 @@ const Home = () => {
                   </div>
                   <div>
                     <h3>Desktops</h3>
-                    <div className={styles.list}>
+                    <div className={`flex flex-col gap-1 pl-2`}>
                       <div data-id={`desktops_all`}>
                         Alle
                       </div>
@@ -193,7 +206,7 @@ const Home = () => {
                   </div>
                   <div>
                     <h3>Tablets</h3>
-                    <div className={styles.list}>
+                    <div className={`flex flex-col gap-1 pl-2`}>
                       <div data-id={`tablets_all`}>
                         Alle
                       </div>
@@ -207,7 +220,7 @@ const Home = () => {
                   </div>
                   <div>
                     <h3>Televisie</h3>
-                    <div className={styles.list}>
+                    <div className={`flex flex-col gap-1 pl-2`}>
                       <div data-id={`televisions_all`}>
                         Alle
                       </div>
@@ -215,7 +228,7 @@ const Home = () => {
                   </div>
                 </div>
               </div>
-              <div className={styles.menu}>
+              <div className={`py-12 pl-12 pr-28`}>
                 <label htmlFor="sort"
                   className={`block h2`}>
                   Winkelketen
@@ -230,8 +243,12 @@ const Home = () => {
             <div className={`grid grid-cols-1 sm:grid-cols-2 border-gray-100
           lg:grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3
           border-t-2 border-l-2 shadow-lg`}>
-              <Items />
-              <Items />
+              {
+                data.map((item, index) => <Card key={index} item={item} />)
+              }
+              {
+                data.map((item, index) => <Card key={index} item={item} />)
+              }
             </div>
           </div>
         </section>

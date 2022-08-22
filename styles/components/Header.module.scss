@@ -2,21 +2,6 @@
   @apply py-8 relative;
 
   .nav {
-    .nav_list {
-      @apply hidden lg:flex uppercase items-center gap-10;
-
-      li {
-        @apply relative after:content-[''] after:block 
-        after:h-2px after:bg-theme after:absolute after:w-0 
-        after:transition-all after:duration-200 after:ease-linear
-        hover:after:w-full after:mt-2 tracking-tight;
-
-        a {
-          @apply font-semibold;
-        }
-      }
-    }
-
     .menu_btn {
       @apply hidden;
 
@@ -78,26 +63,5 @@
     width: 42px;
     height: 42px;
     padding: 0.4rem;
-  }
-
-  .menu {
-    @apply absolute z-50 top-20 m-0 p-0 overflow-hidden 
-    mt-1 w-full flex-col clear-both max-h-0 flex items-end 
-    border-dark bg-theme transition-all ease-linear duration-100;
-
-    li {
-      @apply border-b-2 border-dark w-full 
-      last:border-none;
-
-      a {
-        @apply font-bold w-full block p-3 tracking-tight;
-      }
-    }
-  }
-
-  .open_menu {
-    @apply border-2;
-
-    max-height: 15rem;
   }
 }

@@ -1,4 +1,49 @@
-@import "vendor/tailwind";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@import "base/global";
-@import "base/typography";
+// Global //
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Montserrat", Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+// Typography //
+
+h1,
+.h1 {
+  @apply text-xl lg:text-2xl font-bold mb-8 md:mb-10 lg:mb-14
+  after:content-[''] after:block after:h-4px
+  after:bg-theme after:mt-3 lg:after:mt-5 
+  after:w-16 lg:after:w-20;
+}
+
+h2,
+.h2 {
+  @apply mb-1 lg:mb-2 text-lg lg:text-xl font-bold;
+}
+
+h3,
+.h3 {
+  @apply mb-1 lg:text-lg font-bold;
+}
+
+// Fields //
+
+select {
+  @apply text-gray-500 p-2 w-full lg:w-auto lg:p-3 mt-2 
+    border-2 border-gray-100 rounded-md lg:rounded-lg;
+}

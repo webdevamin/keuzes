@@ -1,7 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import { useState } from "react";
 
 import styles from "../styles/components/Header.module.scss";
@@ -22,46 +20,48 @@ const Header = () => {
                         </a>
                     </Link>
                 </div>
-                {/* <div className={`hidden lg:block`}>
-                    <div className="flex items-center gap-2">
-                        <label htmlFor="search" className="hidden">
-                            Zoeken
-                        </label>
-                        <FontAwesomeIcon icon={faSearch}
-                            className={`h-10 w-10 p-2.5 mb-1`} />
-                        <input type="text" name="search" id="search"
-                            placeholder="Product zoeken"
-                            className={`h-10 w-96 border-b-2 pb-1 border-dark 
-                        outline-none transition-all duration-200 ease-linear
-                        focus:border-theme`}
-                        />
-                    </div>
-                </div> */}
                 <nav className={styles.nav}>
-                    <input className={styles.menu_btn} type="checkbox" id="menu-btn"
-                        onClick={handleClick} />
+                    <input className={styles.menu_btn} type="checkbox"
+                        id="menu-btn" onClick={handleClick} />
                     <label className={`${styles.menu_icon} ${styles.h_button}`}
                         htmlFor="menu-btn">
-                        <span className={styles.navicon}></span>
+                        <span className={`bg-dark block relative h-1 
+                        transition-all w-8 before:bg-dark before:content-[''] 
+                        before:block before:h-full before:absolute 
+                        before:w-full before:lg-hidden before:transition-all 
+                        after:bg-dark after:content-[''] 
+                        after:block after:h-full after:absolute 
+                        after:w-full after:lg-hidden after:transition-all 
+                        before:top-2 after:-top-2`} />
                     </label>
-                    <ul className={styles.nav_list}>
-                        <li>
+                    <ul className={`hidden lg:flex uppercase items-center 
+                    gap-10`}>
+                        <li className={`relative after:content-[''] after:block 
+                        after:h-2px after:bg-theme after:absolute after:w-0 
+                        after:transition-all after:duration-200 after:ease-linear
+                        hover:after:w-full after:mt-2 tracking-tight`}>
                             <Link href={'/'}>
-                                <a>
+                                <a className={`font-semibold`}>
                                     Home
                                 </a>
                             </Link>
                         </li>
-                        <li>
+                        <li className={`relative after:content-[''] after:block 
+                        after:h-2px after:bg-theme after:absolute after:w-0 
+                        after:transition-all after:duration-200 after:ease-linear
+                        hover:after:w-full after:mt-2 tracking-tight`}>
                             <Link href={'/guide'}>
-                                <a>
+                                <a className={`font-semibold`}>
                                     Hoe werkt het
                                 </a>
                             </Link>
                         </li>
-                        <li>
+                        <li className={`relative after:content-[''] after:block 
+                        after:h-2px after:bg-theme after:absolute after:w-0 
+                        after:transition-all after:duration-200 after:ease-linear
+                        hover:after:w-full after:mt-2 tracking-tight`}>
                             <Link href={'/about'}>
-                                <a>
+                                <a className={`font-semibold`}>
                                     Over Keuzes.be
                                 </a>
                             </Link>
@@ -69,21 +69,35 @@ const Header = () => {
                     </ul>
                 </nav>
             </div>
-            <ul className={active ? `${styles.menu} ${styles.open_menu}`
-                : `${styles.menu}`}>
-                <li>
+            <ul className={`absolute z-50 top-20 m-0 p-0 overflow-hidden 
+            mt-1 w-full flex-col clear-both max-h-0 flex items-end 
+            border-dark bg-theme transition-all ease-linear duration-100 
+            ${active ? 'border-2 max-h-96' : ''}`}>
+                <li className={`border-b-2 border-dark w-full 
+                last:border-none`}>
                     <Link href='/'>
-                        <a>Home</a>
+                        <a className={`font-bold w-full block p-3 
+                        tracking-tight`}>
+                            Home
+                        </a>
                     </Link>
                 </li>
-                <li>
+                <li className={`border-b-2 border-dark w-full 
+                last:border-none`}>
                     <Link href='/guide'>
-                        <a>Hoe werkt het</a>
+                        <a className={`font-bold w-full block p-3 
+                        tracking-tight`}>
+                            Hoe werkt het
+                        </a>
                     </Link>
                 </li>
-                <li>
+                <li className={`border-b-2 border-dark w-full 
+                last:border-none`}>
                     <Link href='/about'>
-                        <a>Over Keuzes.be</a>
+                        <a className={`font-bold w-full block p-3 
+                        tracking-tight`}>
+                            Over Keuzes.be
+                        </a>
                     </Link>
                 </li>
             </ul>
