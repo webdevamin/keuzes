@@ -2,15 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
-import styles from "../styles/components/Header.module.scss";
-
 const Header = () => {
     const [active, setActive] = useState(false);
 
     const handleClick = () => setActive(!active);
 
     return (
-        <header className={styles.header}>
+        <header className={`py-8 relative`}>
             <div className={`flex justify-between items-center`}>
                 <div>
                     <Link href={'/'}>
@@ -20,19 +18,22 @@ const Header = () => {
                         </a>
                     </Link>
                 </div>
-                <nav className={styles.nav}>
-                    <input className={styles.menu_btn} type="checkbox"
+                <nav>
+                    <input className={`hidden`} type="checkbox"
                         id="menu-btn" onClick={handleClick} />
-                    <label className={`${styles.menu_icon} ${styles.h_button}`}
+                    <label className={`relative flex justify-center items-center 
+                    lg:hidden pt-0 cursor-pointer w-10 h-10 p-1`}
                         htmlFor="menu-btn">
-                        <span className={`bg-dark block relative h-1 
-                        transition-all w-8 before:bg-dark before:content-[''] 
+                        <span className={`bg-dark block relative h-0.5 
+                        transition-all w-full before:bg-dark before:content-[''] 
                         before:block before:h-full before:absolute 
                         before:w-full before:lg-hidden before:transition-all 
                         after:bg-dark after:content-[''] 
                         after:block after:h-full after:absolute 
                         after:w-full after:lg-hidden after:transition-all 
-                        before:top-2 after:-top-2`} />
+                        before:top-2 after:-top-2 
+                        ${active && `before:-rotate-45 after:rotate-45 
+                        before:top-0 after:top-0 bg-transparent`}`} />
                     </label>
                     <ul className={`hidden lg:flex uppercase items-center 
                     gap-10`}>
