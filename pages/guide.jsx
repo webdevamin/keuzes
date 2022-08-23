@@ -1,14 +1,26 @@
 import Seo from '../components/Seo'
 import Header from "../components/Header";
+import Link from 'next/link';
 
 const Guide = () => {
     return (
         <>
-            <Seo title={"Pagina niet gevonden"} description={`De pagina die u er naar 
-            zocht bestaat niet. Keer terug naar de homepagina.`} noIndex />
-            {/* <Header /> */}
-            <main>
-                <h1>Wordt vervolgd...</h1>
+            <Seo title={"Hoe werkt Keuzes.be"} description={`Hoe werkt Keuzes.be`} />
+            <Header />
+            <main className={`text-center`}>
+                <section>
+                    <h1 className={`after:mx-auto mb-6`}>
+                        Wordt vervolgd...
+                    </h1>
+                    <p>
+                        Deze pagina moet nog opgebouwd worden. Keer terug naar de homepagina.
+                    </p>
+                </section>
+                <Link href={'/'}>
+                    <a className={`button mt-8`}>
+                        Naar homepagina
+                    </a>
+                </Link>
             </main>
         </>
     )

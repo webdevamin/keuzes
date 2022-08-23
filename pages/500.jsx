@@ -19,7 +19,7 @@ const ServerError = () => {
                     </p>
                 </section>
                 <Link href={'/'}>
-                    <a className={`button mt-7`}>
+                    <a className={`button mt-8`}>
                         Naar homepagina
                     </a>
                 </Link>
