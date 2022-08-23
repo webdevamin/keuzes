@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFilter } from '@fortawesome/free-solid-svg-icons'
 import { useState } from "react";
 import AccordionItem from '../components/AccordionItem';
-import data from "../config/data";
+import { categoriesWithItems } from "../config/data";
 import SearchBar from '../components/SearchBar';
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json())
@@ -115,7 +115,7 @@ const Home = () => {
               </h2>
               <div className={`mt-4`}>
                 {
-                  data.map((categoryWithItems, index) => {
+                  categoriesWithItems.map((categoryWithItems, index) => {
                     const { category, items } = categoryWithItems;
 
                     return (
@@ -203,7 +203,7 @@ const Home = () => {
               </h2>
               <div className={`p-3 flex flex-col gap-3`}>
                 {
-                  data.map((categoryWithItems, index) => {
+                  categoriesWithItems.map((categoryWithItems, index) => {
                     const { category, items } = categoryWithItems;
 
                     return (

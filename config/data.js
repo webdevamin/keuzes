@@ -1,4 +1,4 @@
-const data = [
+const categoriesWithItems = [
   {
     category: "smartphones",
     items: [
@@ -37,4 +37,34 @@ const data = [
   },
 ];
 
-export default data;
+const carouselItems = [
+  {
+    title: "Zenfold Madness",
+    text: "Gekke solden voor Asus Zenfold producten op Amazon! Grijp nu je kans!",
+    cta: {
+      text: "Bekijk Zenfolds",
+      link: "/items/12",
+    },
+    image: "/samsung-galaxy.webp",
+  },
+  {
+    title: "Coolblue Black Friday",
+    text: "Coolblue acties voor diverse artikelen op Black Friday!",
+    cta: {
+      text: "Bekijk acties",
+      link: "/items/2",
+    },
+    image: "/coolblue-b-friday.jpg",
+  },
+  {
+    title: "Amazon Cyber Monday",
+    text: "Amazon Cyber Monday! Gekke solden voor elektronica!",
+    cta: {
+      text: "Bekijk solden",
+      link: "/items/8",
+    },
+    image: "/amazon-c-monday.jpg",
+  },
+];
+
+export { categoriesWithItems, carouselItems };

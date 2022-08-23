@@ -28,7 +28,8 @@ const SearchBar = () => {
                 </label>
             </div>
             <button className={`w-full bg-theme p-2 lg:px-5 
-            shadow-lg mt-3 lg:mt-0 font-semibold hover_effect_bg`}>
+            shadow-lg mt-3 lg:mt-0 font-semibold 
+            hover_effect_bg border-2 border-dark`}>
                 Zoeken
             </button>
         </form>
