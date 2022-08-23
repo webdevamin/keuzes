@@ -13,7 +13,7 @@ const Item = ({ item }) => {
         <>
             <Seo title={title} description={description} />
             <Header />
-            <main className={`pt-16 px-1 lg:pt-20 border-t-2 border-gray-100`}>
+            <main className={`pt-10 lg:pt-20 px-1 border-t-2 border-gray-100`}>
                 <article className={`flex flex-col lg:flex-row 
                 items-center gap-1 lg:gap-28 justify-center`}>
                     <div>
@@ -39,8 +39,7 @@ const Item = ({ item }) => {
                                 <a className={`bg-theme p-4 pl-6
                                 lg:p-5 lg:px-8 uppercase block w-full 
                                 lg:inline-block lg:w-auto font-bold 
-                                transition-all ease-linear duration-300
-                                 hover:bg-dark hover:text-white shadow-xl`}>
+                                 shadow-xl hover_effect_bg`}>
                                     Naar homepagina
                                 </a>
                             </Link>

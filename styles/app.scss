@@ -43,7 +43,15 @@ h3,
 
 // Fields //
 
-select {
-  @apply text-gray-500 p-2 w-full lg:w-auto lg:p-3 mt-2 
-    border-2 border-gray-100 rounded-md lg:rounded-lg;
+select,
+input {
+  @apply p-2.5 w-full lg:w-auto lg:p-3 mt-2 
+  border border-dark shadow-sm;
+}
+
+// Effects //
+
+.hover_effect_bg {
+  @apply transition-all ease-linear duration-300
+  hover:bg-dark hover:text-white;
 }
