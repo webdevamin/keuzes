@@ -141,7 +141,7 @@ const Home = () => {
           </div>
         </div>
       </aside>
-      <main className='pt-16 lg:pt-20'>
+      <main className={`border-none`}>
         <div className={`flex justify-between`}>
           <h1 className={`capitalize`}>
             Trending elektronica

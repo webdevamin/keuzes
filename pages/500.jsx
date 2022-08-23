@@ -1,14 +1,28 @@
 import Seo from '../components/Seo'
 import React from 'react';
+import Link from 'next/link';
 
 const ServerError = () => {
     return (
         <>
-            <Seo title={`Oops, server fout`}
-                description={`Er ging iets mis met onze servers. 
-                Probeer het later opnieuw.`} noIndex/>
-            <main className='server_error'>
-                <h1>Er ging iets mis met onze servers. Probeer het later opnieuw.</h1>
+            <Seo title={`Server fout 500`}
+                description={`Er ging iets mis met de servers. 
+                Probeer het later opnieuw.`} noIndex />
+            <main className='text-center border-none mt-10'>
+                <section>
+                    <h1 className={`after:mx-auto mb-6`}>
+                        Server fout
+                    </h1>
+                    <p>
+                        Er ging iets mis met de servers.
+                        Probeer het later opnieuw.
+                    </p>
+                </section>
+                <Link href={'/'}>
+                    <a className={`button mt-7`}>
+                        Naar homepagina
+                    </a>
+                </Link>
             </main>
         </>
     )

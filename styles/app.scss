@@ -12,6 +12,10 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+main {
+  @apply pt-12 lg:pt-20 border-t-2 border-gray-100;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -49,9 +53,13 @@ input {
   border border-dark shadow-sm;
 }
 
-// Effects //
+// Elements //
 
-.hover_effect_bg {
-  @apply transition-all ease-linear duration-300
+button,
+.button {
+  @apply bg-theme p-4 pl-6
+  lg:p-5 lg:px-8 uppercase block w-full 
+  lg:inline-block lg:w-fit font-semibold 
+  shadow-xl transition-all ease-linear duration-300
   hover:bg-dark hover:text-white;
 }
