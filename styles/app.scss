@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+// Utils //
+
+.transite {
+  @apply transition-all ease-linear duration-300;
+}
+
 // Global //
 
 html,
@@ -64,7 +70,8 @@ button,
   @apply bg-theme p-4 pl-6
   lg:p-5 lg:px-8 uppercase block w-full 
   lg:inline-block lg:w-fit font-semibold 
-  shadow-xl transition-all ease-linear duration-300
-  hover:bg-dark hover:text-white 
+  shadow-xl hover:bg-dark hover:text-white 
   border-2 border-dark;
+
+  @extend .transite;
 }

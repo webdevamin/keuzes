@@ -19,6 +19,9 @@ module.exports = {
         "2xl": "35rem",
         "3xl": "40rem",
       },
+      transitionDuration: {
+        'long': '1500ms',
+      }
     },
   },
   plugins: [],
