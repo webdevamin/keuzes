@@ -55,7 +55,7 @@ const Hero = () => {
                                     className={`h-10 w-10 p-3
                                     lg:h-12 lg:w-12 lg:p-4 backdrop-blur-sm 
                                     bg-theme/80 text-dark rounded-full 
-                                    z-50 cursor-pointer transite shadow-2xl
+                                    z-40 cursor-pointer transite shadow-2xl
                                     hover:bg-dark hover:text-white`}
                                     onClick={() => handleClick(true)} />
                                 <FontAwesomeIcon icon={faAngleRight}
@@ -66,7 +66,7 @@ const Hero = () => {
                                     hover:bg-dark hover:text-white`}
                                     onClick={() => handleClick()} />
                             </div>
-                            <div className={`flex w-full h-full justify-center 
+                            <div className={`flex w-full h-auto justify-center 
                             items-center`}>
                                 <Link href={link}>
                                     <a className={`text-dark text-sm lg:text-base
