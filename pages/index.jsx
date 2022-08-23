@@ -64,8 +64,8 @@ const Home = () => {
         ${showMenu ? 'block' : 'hidden'}`}
           onClick={closeMenu} />
         <div className={`top-0 left-0 bg-white py-10 md:py-12 fixed 
-        max-h-screen overflow-y-scroll z-50 block transition-all ease-in-out 
-        shadow-2xl 
+        h-screen overflow-y-scroll z-50 block 
+        transition-all ease-in-out shadow-2xl
         ${showMenu ? 'w-80 md:w-96 px-8 md:px-12' : 'px-0 w-0 md:w-0'}`}>
           <div className={`${showMenu ? 'block' : 'hidden'}`}>
             <div className={`mb-7`}>
@@ -127,7 +127,7 @@ const Home = () => {
                 }
               </div>
             </div>
-            <div>
+            <div className={`mb-32 lg:mb-0`}>
               <label htmlFor="store"
                 className={`block h2 capitalize`}>
                 Winkelketen

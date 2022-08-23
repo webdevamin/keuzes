@@ -49,8 +49,12 @@ h3,
 
 select,
 input {
-  @apply p-2.5 w-full lg:w-auto lg:p-3 mt-2 
-  border border-dark shadow-sm;
+  @apply p-2.5 w-full lg:w-auto lg:p-3 mt-2 appearance-none
+  border border-dark shadow-sm bg-transparent;
+}
+
+select {
+  @apply cursor-pointer;
 }
 
 // Elements //
