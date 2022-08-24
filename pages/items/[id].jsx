@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 import Seo from '../../components/Seo'
 
@@ -44,6 +45,7 @@ const Item = ({ item }) => {
                     </div>
                 </article>
             </main>
+            <Footer />
         </>
     )
 }

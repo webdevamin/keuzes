@@ -19,7 +19,7 @@ body {
 }
 
 main {
-  @apply pt-12 lg:pt-20 border-t-2 border-gray-100;
+  @apply py-12 mb-10 lg:mb-16 lg:py-20 border-y-2 border-gray-100;
 }
 
 a {
@@ -49,6 +49,14 @@ h2,
 h3,
 .h3 {
   @apply mb-1 lg:text-lg font-bold;
+}
+
+p {
+  @apply mb-4 lg:mb-5 leading-7 lg:leading-8 lg:text-lg;
+}
+
+strong {
+  @apply font-semibold;
 }
 
 // Fields //

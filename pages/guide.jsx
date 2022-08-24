@@ -1,6 +1,7 @@
 import Seo from '../components/Seo'
 import Header from "../components/Header";
 import Link from 'next/link';
+import Footer from '../components/Footer';
 
 const Guide = () => {
     return (
@@ -22,6 +23,7 @@ const Guide = () => {
                     </a>
                 </Link>
             </main>
+            <Footer />
         </>
     )
 }

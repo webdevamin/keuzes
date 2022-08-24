@@ -10,6 +10,9 @@ import { useState } from "react";
 import AccordionItem from '../components/AccordionItem';
 import { categoriesWithItems } from "../config/data";
 import SearchBar from '../components/SearchBar';
+import Footer from '../components/Footer';
+import { TOP } from '../config/app';
+import {affiliates} from '../config/affiliates';
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
@@ -92,7 +95,7 @@ const Home = () => {
             <div className={`mb-7`}>
               <label htmlFor="sort"
                 className={`block h2 capitalize`}>
-                Sorteren top 100
+                Sorteren top {TOP}
               </label>
               <select id="sort">
                 <option value={`populair_desc`}>
@@ -111,7 +114,7 @@ const Home = () => {
             </div>
             <div className={`mb-7`}>
               <h2 htmlFor="sort" className={`block h2`}>
-                Filteren top 100
+                Filteren top {TOP}
               </h2>
               <div className={`mt-4`}>
                 {
@@ -133,15 +136,23 @@ const Home = () => {
                 Winkelketen
               </label>
               <select id="store">
-                <option value="amazon">Amazon</option>
-                <option value="coolblue">Coolblue</option>
-                <option value="bol">Bol.com</option>
+                {
+                  affiliates.map((affiliate, index) => {
+                    const { name, slug } = affiliate;
+
+                    return (
+                      <option key={index} value={slug}>
+                        {name}
+                      </option>
+                    )
+                  })
+                }
               </select>
             </div>
           </div>
         </div>
       </aside>
-      <main className={`border-none`}>
+      <main className={`border-none pb-0`}>
         <div className={`flex justify-between`}>
           <h1 className={`capitalize`}>
             Trending elektronica
@@ -178,7 +189,7 @@ const Home = () => {
                 className={`block h2 after:content-[''] after:block 
                   after:h-2px after:bg-theme after:mt-1 lg:after:mt-3 
                   after:w-8 lg:after:w-12`}>
-                Sorteren top 100
+                Sorteren top {TOP}
               </label>
               <select id="sort">
                 <option value="populair_desc">
@@ -199,7 +210,7 @@ const Home = () => {
               <h2 className={`after:content-[''] after:block 
                 after:h-2px after:bg-theme after:mt-1 lg:after:mt-3 
                 after:w-8 lg:after:w-12`}>
-                Filteren top 100
+                Filteren top {TOP}
               </h2>
               <div className={`p-3 flex flex-col gap-3`}>
                 {
@@ -236,9 +247,17 @@ const Home = () => {
                 Winkelketen
               </label>
               <select id="store w-full">
-                <option value="amazon">Amazon</option>
-                <option value="coolblue">Coolblue</option>
-                <option value="bol">Bol.com</option>
+                {
+                  affiliates.map((affiliate, index) => {
+                    const { name, slug } = affiliate;
+
+                    return (
+                      <option key={index} value={slug}>
+                        {name}
+                      </option>
+                    )
+                  })
+                }
               </select>
             </div>
           </aside>
@@ -258,6 +277,7 @@ const Home = () => {
           </div>
         </section>
       </main>
+      <Footer />
     </>
   )
 }

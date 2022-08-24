@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Seo from '../components/Seo'
 import Header from "../components/Header";
+import Footer from '../components/Footer';
 
 const ClientError = () => {
     return (
@@ -26,6 +27,7 @@ const ClientError = () => {
                     </a>
                 </Link>
             </main>
+            <Footer />
         </>
     )
 }

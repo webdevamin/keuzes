@@ -1,20 +1,49 @@
 import Seo from '../components/Seo'
 import Header from "../components/Header";
 import Link from 'next/link';
+import Footer from '../components/Footer';
+import { TOP } from '../config/app';
+import affiliates from '../config/affiliates';
 
 const About = () => {
     return (
         <>
             <Seo title={"Over Keuzes.be"} description={`Over Keuzes.be`} />
             <Header />
-            <main className={`text-center`}>
+            <main>
                 <section>
-                    <h1 className={`after:mx-auto mb-6`}>
-                        Wordt vervolgd...
-                    </h1>
-                    <p>
-                        Deze pagina moet nog opgebouwd worden. Keer terug naar de homepagina.
-                    </p>
+                    <article>
+                        <h1 className={`text-2xl lg:text-3xl`}>
+                            Over Keuzes.be
+                        </h1>
+                        <p>
+                            Iemand die een nieuwe smartphone en/of laptop wil kopen, zoekt
+                            meestal naar één van de beste producten. Deze website is
+                            ontwikkeld voor particulieren/bedrijven die
+                            naar de beste elektronica artikelen zoeken.
+                        </p>
+                        <p>
+                            Momenteel worden enkel top {TOP} smartphones, laptops, desktops,
+                            tablets en televisie getoond. Later kunnen we het
+                            assortiment uitbreiden naar andere meest bekeken
+                            categoriëen zoals headphones, smartwatches, etc.
+                        </p>
+                        <p>
+                            Voor elk product worden prijzen en andere
+                            nuttige informatie zoals voorraad uit verschillende webshops
+                            getoond. Een voorbeeld: u bekijkt een artikel Samsung Galaxy S21 FE
+                            op deze website. Daarop kunt u zien dat het op Coolblue €629 kost.
+                            Terwijl de prijs op Amazon €619 is. Nog een handige feature buiten
+                            prijsvergelijking is de productvergelijking. U kunt tot 5 dezelfde
+                            type producten samen vergelijken qua prijs, specificaties en meer.
+                        </p>
+                        <p>
+                            Ten slotte maakt deze applicatie gebruik van <strong>affiliate programma</strong>.
+                            Wat betekent dat het systeem producten verzamelt uit bekende webshops
+                            en ze op deze website weergeeft. Voor elke transactie dat er gebeurt,
+                            vervangt de app een kleine commissie van een webshop.
+                        </p>
+                    </article>
                 </section>
                 <Link href={'/'}>
                     <a className={`button mt-8`}>
@@ -22,6 +51,7 @@ const About = () => {
                     </a>
                 </Link>
             </main>
+            <Footer />
         </>
     )
 }
