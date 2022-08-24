@@ -18,7 +18,7 @@ const Guide = () => {
                     </p>
                 </section>
                 <Link href={'/'}>
-                    <a className={`button mt-8`}>
+                    <a className={`button mt-8 mx-auto`}>
                         Naar homepagina
                     </a>
                 </Link>

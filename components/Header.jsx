@@ -70,14 +70,14 @@ const Header = () => {
                     </ul>
                 </nav>
             </div>
-            <ul className={`absolute z-50 top-20 m-0 p-0 overflow-hidden 
+            <ul className={`absolute z-100 top-20 m-0 p-0 overflow-hidden 
             mt-1 w-full flex-col clear-both max-h-0 flex items-end 
             border-dark bg-theme transition-all ease-linear duration-100 
             ${active ? 'border-2 max-h-96' : ''}`}>
                 <li className={`border-b-2 border-dark w-full 
                 last:border-none`}>
                     <Link href='/'>
-                        <a className={`font-bold w-full block p-3 
+                        <a className={`font-semibold w-full block p-3 
                         tracking-tight`}>
                             Home
                         </a>
@@ -86,7 +86,7 @@ const Header = () => {
                 <li className={`border-b-2 border-dark w-full 
                 last:border-none`}>
                     <Link href='/guide'>
-                        <a className={`font-bold w-full block p-3 
+                        <a className={`font-semibold w-full block p-3 
                         tracking-tight`}>
                             Hoe werkt het
                         </a>
@@ -95,7 +95,7 @@ const Header = () => {
                 <li className={`border-b-2 border-dark w-full 
                 last:border-none`}>
                     <Link href='/about'>
-                        <a className={`font-bold w-full block p-3 
+                        <a className={`font-semibold w-full block p-3 
                         tracking-tight`}>
                             Over Keuzes.be
                         </a>

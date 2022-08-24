@@ -12,7 +12,7 @@ import { categoriesWithItems } from "../config/data";
 import SearchBar from '../components/SearchBar';
 import Footer from '../components/Footer';
 import { TOP } from '../config/app';
-import {affiliates} from '../config/affiliates';
+import affiliates from '../config/affiliates';
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
@@ -152,7 +152,7 @@ const Home = () => {
           </div>
         </div>
       </aside>
-      <main className={`border-none pb-0`}>
+      <main className={`border-t-0`}>
         <div className={`flex justify-between`}>
           <h1 className={`capitalize`}>
             Trending elektronica

@@ -3,8 +3,8 @@ import { categoriesWithItems } from "../config/data";
 
 const Footer = () => {
     return (
-        <footer className={`mb-12 lg:mb-20 grid grid-cols-2 gap-5`}>
-            <section className={`grid grid-cols-1 lg:grid-cols-2 gap-5`}>
+        <footer className={`mb-12 lg:mb-20 grid grid-cols-1 lg:grid-cols-2 gap-5`}>
+            <section className={`grid grid-cols-2 gap-5`}>
                 {
                     categoriesWithItems.map((categoryWithItems, index) => {
                         const { category, items } = categoryWithItems;
@@ -33,7 +33,7 @@ const Footer = () => {
                     })
                 }
             </section>
-            <section className={`text-end`}>
+            <section className={`lg:text-end border-t lg:border-none pt-7 mt-3 lg:pt-0 lg:mt-0`}>
                 <h3 className={`font-semibold mb-2`}>
                     Keuzes.be
                 </h3>
@@ -41,11 +41,6 @@ const Footer = () => {
                     <li>
                         <Link href={'/about'}>
                             <a>Over Keuzes.be</a>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href={'/guide'}>
-                            <a>Hoe werkt het</a>
                         </Link>
                     </li>
                     <li>
